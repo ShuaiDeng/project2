@@ -1,0 +1,293 @@
+/*
+==============================
+Filename     : stylesheet.css
+Authored by  : team "Team"
+Last Updated : 09 12 17
+==============================
+notes:
+  Blue - #02779E
+*/
+body {
+  font-size:18px;
+  font-family:sans-serif;
+  color:#02779E;
+}
+
+.wrapper {
+  display:grid;
+  grid-template-columns:340px 1fr 340px;
+  grid-template-rows:auto;
+  grid-template-areas:
+    ". date_view date_header";
+  height:100%;
+  min-height:100%;
+  width:100%;
+  position:absolute;
+  top:0px;
+  left:0px;
+  margin:0;
+  padding:0;
+}
+
+.date_header {
+  display:block;
+  position:fixed;
+  top:0px;
+  right:0px;
+  height:auto;
+  padding-bottom:0.5em;
+  width:330px;
+  background-color:rgba(255,255,255,0.9);
+  grid-area:date_header;
+}
+
+.dayname, .date_text {
+  color:#02779E;
+  text-align:right;
+  font-size:28px;
+  padding:0.6em 0.6em 0 0;
+}
+
+.date_text {
+  display:inline-block;
+  float:right;
+  width:340px;
+}
+
+.date_view {
+  display:block;
+  height:100%;
+  min-height:100%;
+  padding:0;
+  grid-area:date_view;
+  box-shadow:0px 0px 10px 0px #999;
+}
+
+.t_block:first-of-type {
+  border-top:1px solid #02779E;
+  border-bottom:1px dotted #02779E;
+}
+
+.t_block:last-of-type {
+  border-bottom:1px solid #02779E;
+}
+
+.t_block {
+  cursor:pointer;
+  display:block;
+  width:100%;
+  min-width:300px;
+  margin:0;
+  padding:0;
+  border-bottom:1px dotted #02779E;
+  border-left:1px solid #02779E;
+  border-right:1px solid #02779E;
+  background-color:#f4f4f4;
+  text-align:center;
+}
+
+/*.t_block:hover {
+  background-color:lightblue;
+  color:#fff;
+  transition:0.4s;
+}*/
+
+.time {
+  cursor:pointer;
+  padding-top:10px;
+}
+
+.eventDisplay {
+  display:block;
+  min-height:30px;
+  padding:0.5em;
+}
+
+button:hover {
+  cursor:pointer;
+}
+
+.btn {
+  display:inline-block;
+  float:right;
+  padding:0.5em 1em 0.5em 0.5em;
+}
+
+.btn_alt {
+  display:inline-block;
+  float:right;
+  padding:0.5em 1em 0.5em 0.5em;
+}
+
+.btn_NOHOVER {
+  cursor:default;
+  display:inline-block;
+  float:right;
+  padding:0.5em 1em 0.5em 0.5em;
+}
+
+.btn:hover {
+  cursor:pointer;
+  color:#02779E;
+  opacity:0.8;
+  transition:0.3s;
+}
+
+.btn_alt:hover {
+  cursor:pointer;
+  color:#5BC236;
+  transition:0.3s;
+}
+
+.btn_content {
+  display:block;
+  float:right;
+  background-color:#f4f4f4;
+  color:#02779E;
+  border-radius:15px;
+  padding:0.5em;
+  margin-right:20px;
+}
+
+.btn_content:hover {
+  cursor:pointer;
+  background-color:#02779E;
+  color:#f4f4f4;
+  transition:0.3s;
+}
+
+.fa:hover {
+  cursor:pointer;
+  color:#02779E;
+  transition:0.3s;
+}
+
+.settings {
+  cursor:pointer;
+  height:50px;
+  width:50px;
+  text-align:center;
+  opacity:1;
+  z-index: 50;
+}
+
+.settings:hover {
+  cursor:pointer;
+  color:#02779E;
+  opacity:0.8;
+  transition:0.3s;
+}
+
+
+.options_toolbar {
+  display:block;
+  height:100%;
+  min-height:100%;
+  width:300px;
+  position:fixed;
+  padding:0;
+  margin:0;
+  top:0px;
+}
+
+.options_toolbar > div {
+  padding:0.5em;
+}
+
+.options_toolbar > div:hover {
+  cursor:pointer;
+  color:#02779E;
+  opacity:0.8;
+  transition:0.2s;
+}
+
+.options_toolbar > div:nth-child(2):hover {
+  cursor:default;
+  color:#02779E;
+  opacity:1;
+}
+
+.btn_attend {
+  display:block;
+  padding:0.5em;
+  width:150px;
+  margin-left:34%;
+  margin-bottom:10px;
+  background-color:#333;
+  color:#f4f4f4;
+  border-radius:15px;
+}
+
+.btn_attend:hover {
+  background-color:#02779E;
+  color:#f4f4f4;
+  transition:0.4s;
+}
+
+.btn_wrapper {
+  background-color:#f4f4f4;
+}
+
+.btn_inner {
+  background-color:#f4f4f4 !important;
+}
+
+#navbar {
+  width:340px;
+  left:-340px;
+  display:none;
+  background-color:#f4f4f4;
+  transition:all 0.7s;
+  z-index:2;
+}
+
+#navbar > div {
+  padding:20px;
+}
+
+#Calendar {
+  cursor:default;
+  position:fixed;
+  min-height:300px;
+  left:0.5em;
+  bottom:1.5em;
+  text-align:left;
+}
+
+.monthname {
+  width:182px;
+  height:28px;
+  font-size:24px;
+}
+
+.days_of_the_week {
+  display:inline-block;
+  width:26px;
+  height:14px;
+  font-size:12px;
+  text-align:center;
+  opacity:0.3;
+}
+
+.day {
+  display:inline-block;
+  text-align:center;
+  border-radius:3px;
+  padding:2px;
+  width:20px;
+  height:20px;
+  border:1px solid #02779E;
+}
+
+.eventDisplay {
+  color:#333;
+  text-align:left;
+  padding:1em;
+}
+
+.textBox{
+	display:block;
+	line-height:24px;
+	width:150px;
+	margin-top:10px;
+}

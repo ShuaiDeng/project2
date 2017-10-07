@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="src/stylesheet.css">
+  <link rel="stylesheet" href="src/btn_toggle/btn_toggle.css">
+  <link rel="stylesheet" href="src/font-awesome-4.7.0/css/font-awesome.css">
+  <title>team "Team" - Calendar View</title>
+</head>
+<body>
+  <div id="navbar" class="options_toolbar" style="display:none;">
+    <div onclick="javascript:toggle_navbar();" style="display:block;width:100%;padding-left:50px;font-size:26px;">
+      &times; Close Options</div>
+    <div>Toggle 24hr Time
+      <div style="float:right;" dragabble="false" class="btn_wrapper" id="BTN1" onclick="javascript:btn_toggle(0, 'BTN1', 'BTN1_in');toggleTime();">
+        <div dragabble="false" class="btn_inner" id="BTN1_in"><div dragabble="false">O</div></div>
+      </div>
+    </div>
+    <div>
+      <div style="float:left;cursor:pointer;" onclick="javascript:window.location.reload();">Back to Today</div>
+    </div>
+    <div>
+      <div style="float:left;cursor:pointer;" onclick="javascript:clearEventsArray();">Delete all Events</div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="options_toolbar">
+      <div class="settings"><i class="fa fa-2x fa-gear" onclick="javascript:toggle_navbar();"></i></div>
+      <center>
+        <div draggable="false" id="Calendar"></div>
+      </center>
+    </div>
+
+    <span class="date_header">
+
+      <div class="dayname" id="dayOfWeek"></div>
+      <div class="date_text" id="date"></div>
+
+      <div>
+        <div class="btn" onclick="javascript:dayForward()"><i class="fa fa-arrow-right"></i></div>
+        <div class="btn_NOHOVER">Day</div>
+  	    <div class="btn" onclick="javascript:dayBackward()"><i class="fa fa-arrow-left"></i></div>
+  	  </div>
+
+      <div>
+        <div class="btn" onclick="javascript:monthForward()"><i class="fa fa-arrow-right"></i></div>
+        <div class="btn_NOHOVER">Month</div>
+	      <div class="btn" onclick="javascript:monthBackward()"><i class="fa fa-arrow-left"></i></div>
+	    </div>
+
+      <center>
+      <div id="eventCreation" style="display:none;margin:1em;">
+        <b>New Event</b><br><p style="text-align:left;font-size:16px;">
+		<i class="fa fa-info-circle"></i> Select times for your event
+		by clicking on the list to the left.</p>
+        <input class="textBox" type="text" id="host" placeholder="Enter your name"></input>
+        <input class="textBox" type="text" id="name" placeholder="Enter event name"></input>
+		<input  type="checkbox" id="multiday" onclick="javascript:checkDay()"> On selected day</input>
+		
+		<!--task list-->
+		<div class="btn_alt" style="border:1px solid #333;width:150px;margin-right:62.5px;margin-top:10px;" onclick="createNewTask();"><i class="fa fa-plus"></i> Add a Task</div>
+		<!--/task list-->
+		
+        <div class="btn_alt" style="border:1px solid #333;width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:constructEvent();"><i class="fa fa-plus"></i> Create Event</div>
+        <div class="btn" style="width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:hideEventCreation();">Cancel</div>
+
+      </div>
+      </center>
+
+      <div class="btn_content" style="margin-top:10px;" id="eventCreationButton" onclick="javascript:showEventCreation();">Add An Event</div>
+      <center>
+	    <div id="availabilityCreation" style="display:none;margin:1em;">
+        <b>Add Your Availability</b><br>
+        <p style="text-align:left;font-size:16px;">
+		    <i class="fa fa-info-circle"></i> Select event times you can attend
+		    using the checkboxes to the left.</p>
+	      <input class="textBox" type="text" id="attendee" placeholder="Enter your name"></input>
+
+	      <div class="btn_alt" style="border:1px solid #333;width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:constructAvailability();"><i class="fa fa-plus"></i> Add Availability</div>
+	      <div class="btn" style="width:150px;margin-right:62.5px;margin-top:10px;" onclick="javascript:hideAvailabilityCreation();">Cancel</div>
+	    </div>
+      </center>
+	    <div class="btn_content" style="margin-top:10px;" id="availabilityCreationButton" onclick="javascript:showAvailabilityCreation();">Add Your Availability</div>
+    </span>
+
+    <div class="date_view">
+    </div> <!--date_view-->
+</div> <!--wrapper-->
+
+<script src="src/date.js" type="text/javascript"></script>
+<script src="src/calendar.js" type="text/javascript"></script>
+<script src="src/mode_admin.js" type="text/javascript"></script>
+<script src="src/mode_availability.js" type="text/javascript"></script>
+<script src="src/toggleTime.js" type="text/javascript"></script>
+<script src="src/btn_toggle/btn_toggle.js" type="text/javascript"></script>
+<script src="src/preload.js" type="text/javascript"></script>
+<!-- See https://github.com/kadengriffith/randomColor
+     Created by David Merfield
+     Accessed on 14 September 2017 -->
+<script src="src/randomColor-master/randomColor.js" type="text/javascript"></script>
+</body>
+</html>
